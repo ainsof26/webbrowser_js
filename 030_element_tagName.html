@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li id="active" class="important current">JavaScript</li>
+  </ul>
+  <script>
+    console.log(document.getElementById('active').tagName); // LI
+
+    /*
+    document.getElementById('active'): HTMLLIElement < HTMLElement < Element
+    Element.tagName
+    */
+
+    document.getElementById('active').tagName = 'a';
+    // Not work. Still LI.  Because .tagName property is readonly.
+  </script>
+</body>
+
+</html>

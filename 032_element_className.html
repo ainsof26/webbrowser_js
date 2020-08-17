@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li id="active">JavaScript</li>
+  </ul>
+  <script>
+    var active = document.getElementById('active');
+    active.className = 'important current';
+    console.log(active.className);
+    active.className += ' read';
+    console.log(active.className);
+    document.getElementById('active').className += ' another';
+    console.log(document.getElementById('active').className);
+    active.className = 'important read another'; // remove 'current' className
+    active.className = active.className + ' current'; // add 'current' className
+    document.getElementsByClassName('important read another current')[0].className += ' last';
+    // document.getElementsByClassName.className doesn't work because it is an array.
+  </script>
+</body>
+
+</html>

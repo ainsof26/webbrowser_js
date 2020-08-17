@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+  <script>
+    console.log(location.toString());
+    console.log(location.href);
+    //Each shows the url of the webpage.
+
+    //location.protocol //location.host //location.port //location.pathname //location.search //location.hash
+
+    //console.log(location.href = 'http://naver.com');     go to a specific url. (REDIRECTION)
+    //console.log(location = 'http://naver.com');          the same
+
+    //console.log(location = location.href);               RELOAD
+    //console.log(location.reload());                      RELOAD
+  </script>
+</body>
+
+</html>
+
+
+<!--
+  - console.log(location.toString(), location.href);
+  VM3631:1 http://118.91.109.99/js_exercise/011_location_object.html http://118.91.109.99/js_exercise/011_location_object.html
+  undefined
+  - location.href;
+  "http://118.91.109.99/js_exercise/011_location_object.html"
+  - location.toString();
+  "http://118.91.109.99/js_exercise/011_location_object.html"
+  - console.log(location.protocol, location.host, location.port, location.pathname, location.search, location.hash);
+  VM4296:1 http: 118.91.109.99  /js_exercise/011_location_object.html
+
+  http://    opentutorials.org   :80   / module / 1   ?id=1   #hash
+  protocol   host                port   pathname      search  hash
+-->

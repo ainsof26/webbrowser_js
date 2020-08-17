@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <!-- <script type="text/javascript" src="./js/004_script_tag_position.js"></script> -->
+  <!-- Below is the same as when you actually put the above line. -->
+  <!-- <script>
+    var hw = document.getElementById('hw');
+    /*
+    document.getElementById('hw') fails because #hw is not registered yet.
+    so the value of var hw is null.
+    */
+
+    hw.addEventListener('click', function() {
+      alert('Hello World');
+    });
+  </script> -->
+
+  <script>
+    window.onload = function() { // IMPORTANT.
+      /*
+      window.onload gets called after the browser reaches at the end of HTML codes
+      so it has read the value of var hw now.
+      */
+      var hw = document.getElementById('hw');
+      hw.addEventListener('click', function() {
+        alert('Hello World');
+      });
+    }
+    //if you don't want to use window.onload, you can just put <script> at the end of <body>, which is also more proper.
+  </script>
+
+</head>
+
+<body>
+  <input type="button" id="hw" value="Hello World">
+  <!-- No javascript code so far. Only HTML codes -->
+</body>
+
+</html>

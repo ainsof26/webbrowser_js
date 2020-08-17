@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <ul>
+    <li>html</li>
+    <li class="active">css</li>
+    <li class="active">JavaScript</li>
+  </ul>
+
+  <script src="./js/jquery-3.5.1.js"></script>
+  <script>
+    var lis = $('li'); // lis: object // $: function
+    for (var i = 0; i < lis.length; i++) {
+      console.log(lis[i]);
+    }
+    lis.css('textDecoration', 'underline');
+    // Every element in the object 'lis' is affected. Like when 'for' is executed.
+    // But we don't actually use 'for'.
+    // css('property', 'value'): To set the property's value.
+
+    $(lis[1]).css('textDecoration', 'none');
+    lis.eq(2).css('textDecoration', 'none');
+    // eq() function selects a specific nth item of an array.
+
+    console.log(lis.css('textDecoration'));
+    // underline solid rgb(0, 0, 0)
+    // lis.css('property'): To return the value of a specified CSS property.
+    // At this time, it returns only the value of the first item in the array 'lis'.
+
+    console.log(lis.eq(1).css('textDecoration'));
+    // none solid rgb(0, 0, 0)
+
+    lis.eq(2).css('textDecoration', 'underline').css('color', 'red'); // CHAINING
+
+  </script>
+</body>
+
+</html>

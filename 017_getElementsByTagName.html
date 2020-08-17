@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+  </ul>
+  <ol>
+    <li>HTML 2</li>
+    <li>CSS 2</li>
+    <li>JavaScript 2</li>
+  </ol>
+  <input type="button" value="all black" onclick="allblack()">
+  <input type="button" value="ul blue" onclick="ulblue()">
+  <input type="button" value="ol blue" onclick="olblue()">
+
+  <script>
+    var lis = window.document.getElementsByTagName('li'); //'window.' can be omitted.
+    var ul = document.getElementsByTagName('ul')[0]; //[0] must be included.
+    var ul_lis = ul.getElementsByTagName('li');
+    //var ol = document.getElementsByTagName('ol')[0];
+    var ol_lis = document.getElementsByTagName('ol')[0].getElementsByTagName('li');
+    //commands can be chained and put in one long single line like this.
+
+    //alert(lis.length);
+    for (var i = 0; i < lis.length; i++) {
+      lis[i].style.color = 'red';
+      //change <li> to <li style="color: red;">
+      //console.log(typeof lis[i]); ONLY OBJECT
+    }
+
+    function allblack() {
+      for (var i = 0; i < lis.length; i++) {
+        lis[i].style.color = "black";
+      }
+    }
+
+    function ulblue() {
+      for (var i = 0; i < ul_lis.length; i++) {
+        ul_lis[i].style.color = "blue";
+      }
+    }
+
+    function olblue() {
+      for (var i = 0; i < ol_lis.length; i++) {
+        ol_lis[i].style.color = "blue";
+      }
+    }
+  </script>
+</body>
+
+</html>

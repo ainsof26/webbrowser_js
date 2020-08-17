@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li id="active">JavaScript</li>
+  </ul>
+  <script>
+    console.group('before');
+    var lis = document.getElementsByTagName('li');
+    for (var i = 0; i < lis.length; i++) {
+      console.log(lis[i]);
+    }
+    console.groupEnd();
+    console.group('after');
+    lis[1].parentNode.removeChild(lis[1]);
+    for (var i = 0; i < lis.length; i++) {
+      console.log(lis[i]);
+    }
+    console.groupEnd();
+  </script>
+  <!-- HTMLCollection DEFINITION
+    interface HTMLCollection {
+      readonly attribute unsigned long   length;
+      Node               item(in unsigned long index);
+      Node               namedItem(in DOMString name);
+    };
+  -->
+  <!-- CONSOLE
+    Before
+      <li>HTML</li>
+      <li>CSS</li>
+      <li id="active">JavaScript</li>
+    After
+      <li>HTML</li>
+      <li id="active">JavaScript</li>
+  -->
+</body>
+
+</html>

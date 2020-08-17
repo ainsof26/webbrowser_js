@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style>
+    li {
+      padding: 20px;
+      list-style: none
+    }
+
+    span {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li>
+      <input type="button" onclick="open1()" value="window.open('http://google.com');">
+      <span>The first property of open() is the url of a document loaded in a new window.</span>
+    </li>
+    <li>
+      <input type="button" onclick="open2()" value="window.open('http://google.com', '_self');">
+      <span>The second property of open() is the name of a new window. '_self' means the same window where the script is executed.</span>
+    </li>
+    <li>
+      <input type="button" onclick="open3()" value="window.open('http://google.com', '_blank');">
+      <span>'_blank' means a new different window.</span>
+    </li>
+    <li>
+      <input type="button" onclick="open4()" value="window.open('http://google.com', 'ainsof26');">
+      <span>You can put a name on the window.</span>
+    </li>
+    <li>
+      <input type="button" onclick="open5()" value="window.open('http://naver.com', 'ainsof26');">
+      <span>All the 'open()'s which have the same name property open new document on the same window .</span>
+    </li>
+    <li>
+      <input type="button" onclick="open6()" value="window.open('http://google.com', '_blank', 'width=200px, height=200px, resizable=no');">
+      <span>The third property involves the shape of the window.</span>
+    </li>
+  </ul>
+
+
+  <script>
+    function open1() {
+      window.open('http://google.com');
+    }
+    function open2() {
+      window.open('http://google.com', '_self');
+    }
+    function open3() {
+      window.open('http://google.com', '_blank');
+    }
+    function open4() {
+      window.open('http://google.com', 'ainsof26');
+    }
+    function open5() {
+      window.open('http://naver.com', 'ainsof26');
+    }
+    function open6() {
+      window.open('http://google.com', '_blank', 'width=200px, height=200px, resizable=no');
+    }
+  </script>
+</body>
+
+</html>

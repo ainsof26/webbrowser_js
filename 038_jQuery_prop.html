@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <a id="t1" href="./index.html">anchor</a>
+  <input id="t2" type="checkbox" checked="checked">
+
+  <script src="./js/jquery-3.5.1.js"></script>
+  <script>
+    var t1 = $('#t1');
+    console.log(t1.attr('href'));     // ./index.html
+    console.log(t1.prop('href'));     // http://118.91.109.99/js_exercise/index.html
+    var t2 = $('#t2');
+    console.log(t2.attr('checked'));  // checked
+    console.log(t2.prop('checked'));  // true
+
+    // The names of both attribute and property methods are the same.
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+  <script>
+    console.dir(navigator);
+    console.dir(navigator.appName);
+    //Netscape
+    console.dir(navigator.appVersion);
+    //5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36
+    console.dir(navigator.userAgent);
+    //Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36
+    //Information from browser to server  //similar to appVersion
+    console.dir(navigator.platform);
+    //"Win32"
+  </script>
+
+  <!-- METHOD FUNCTION TEST -->
+  <script>
+    if (!Object.keys) { //If the broswer is not compatible with 'keys' method, this will add the function and make the browser compatible.
+      Object.keys = (function() {
+        'use strict';
+        var hasOwnProperty = Object.prototype.hasOwnProperty,
+          hasDontEnumBug = !({
+            toString: null
+          }).propertyIsEnumerable('toString'),
+          dontEnums = [
+            'toString',
+            'toLocaleString',
+            'valueOf',
+            'hasOwnProperty',
+            'isPrototypeOf',
+            'propertyIsEnumerable',
+            'constructor'
+          ],
+          dontEnumsLength = dontEnums.length;
+
+        return function(obj) {
+          if (typeof obj !== 'object' && (typeof obj !== 'function' || obj === null)) {
+            throw new TypeError('Object.keys called on non-object');
+          }
+
+          var result = [],
+            prop, i;
+
+          for (prop in obj) {
+            if (hasOwnProperty.call(obj, prop)) {
+              result.push(prop);
+            }
+          }
+
+          if (hasDontEnumBug) {
+            for (i = 0; i < dontEnumsLength; i++) {
+              if (hasOwnProperty.call(obj, dontEnums[i])) {
+                result.push(dontEnums[i]);
+              }
+            }
+          }
+          return result;
+        };
+      }());
+    }
+  </script>
+
+</body>
+
+</html>

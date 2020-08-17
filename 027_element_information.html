@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <ul>
+    <li id="target">html</li>
+    <li>css</li>
+    <li>JavaScript</li>
+  </ul>
+
+  <script src="./js/jquery-3.5.1.js"></script>
+  <script>
+    var lis = $('li');
+    console.log(lis.length);
+    for (var i = 0; i < lis.length; i++) {
+      console.log(lis[i]);
+    }
+    for (var i = 0; i < lis.length; i++) {
+      $(lis[i]).css('color', 'blue');
+      // lis[i].css() doesn't work because lis[i] is not a jQuery object, but a DOM object.
+      // $(lis[i]) is a jQuery object.
+    }
+
+    console.log($(lis));
+
+    var target = document.getElementById('target');
+    // var target is a DOM object.
+
+    var temp = $(target);
+    // var temp is a jQuery object pointing to the li tag.
+
+  </script>
+</body>
+
+</html>

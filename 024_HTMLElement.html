@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <a id="anchor" href="#">Anchor</a>
+  <ul id="ulist">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li id="active">JavaScript</li>
+  </ul>
+  <input type="button" id="button" value="button">
+
+  <script>
+    var target = document.getElementById('active');
+    console.log(target.constructor.name); // HTMLLIElement : Array
+    // use .constructor.name to find out the name of an object.
+    var target = document.getElementById('ulist');
+    console.log(target.constructor.name); // HTMLUListElement : Array
+    var target = document.getElementById('anchor');
+    console.log(target.constructor.name); // HTMLAnchorElement : Array
+    var target = document.getElementById('button');
+    console.log(target.constructor.name); // HTMLInputElement : Array
+    var target = document.getElementsByTagName('li');
+    console.log(target.constructor.name); // HTMLCollection : Array-Like Object
+  </script>
+
+  <!--
+    getElementById's return type is HTML___Element
+    getElementsByTagName's return type is HTMLCollection
+  -->
+
+  <!--
+    LI TAG DEFINITION
+    interface HTMLLIElement[CHILD OBJECT] : HTMLElement[PARENT OBJECT] {
+             attribute DOMString       type;
+             attribute long            value;
+    };
+    ON CONSOLE
+    var target = document.getElementById('active');
+      undefined
+    target.type="square";
+      "square"
+  -->
+
+  <!--
+    A TAG DEFINITION
+    interface HTMLAnchorElement : HTMLElement {
+           attribute DOMString       accessKey;
+           attribute DOMString       charset;
+           attribute DOMString       coords;
+           attribute DOMString       href;
+           attribute DOMString       hreflang;
+           attribute DOMString       name;
+           attribute DOMString       rel;
+           attribute DOMString       rev;
+           attribute DOMString       shape;
+           attribute long            tabIndex;
+           attribute DOMString       target;
+           attribute DOMString       type;
+    void               blur();
+    void               focus();
+    };
+    ON CONSOLE
+    var target = document.getElementById('anchor');
+      undefined
+    target.href="http://google.com";
+      "http://google.com"
+    target
+      <a id=​"anchor" href=​"http:​/​/​google.com">​Anchor​</a>​
+    target.href
+      "http://google.com/"
+  -->
+
+  <!--
+    interface HTMLElement : Element {
+             attribute DOMString       id;
+             attribute DOMString       title;
+             attribute DOMString       lang;
+             attribute DOMString       dir;
+             attribute DOMString       className;
+    };
+    GOOGLE 'DOM TREE' 
+  -->
+
+
+</body>
+
+</html>

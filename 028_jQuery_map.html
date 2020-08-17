@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+  </ul>
+
+  <script src="./js/jquery-3.5.1.js"></script>
+  <script>
+    var lis = $('li');
+    lis.map(function(index, element) {
+      console.log(index, element);
+      $(element).css('color', 'red');
+    });
+  </script>
+
+</body>
+
+</html>

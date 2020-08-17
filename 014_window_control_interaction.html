@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <input type="button" value="open" onclick="window_open();">
+  <input type="text" onkeypress="window_message(this.value)">
+  <input type="button" value="close" onclick="window_close();">
+
+  <script>
+    function window_open() {
+      win = window.open('014_demo.html', 'ainsof26', 'width=300px, height=500px');
+      //'var' is not here because win must be a 'global variable' so that the other window can be controlled through the variable.
+    }
+    function window_message(msg) {
+      win.document.getElementById('message').innerText = msg;
+    }
+    function window_close() {
+      win.close();
+    }
+  </script>
+</body>
+
+</html>

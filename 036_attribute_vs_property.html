@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <p id="target1">Hello World</p>
+
+  <script>
+    var target1 = document.getElementById('target1');
+
+    target1.setAttribute('class', 'important');
+    // attribute method
+    target1.className = 'important';
+    // property method
+
+    /*
+      Property method is relatively convenient and fast
+      but often uses different names from the actual html attribute names.
+    */
+  </script>
+
+  <a id="target2" href="./index.html">anchor</a>
+
+  <script>
+    var target2 = document.getElementById('target2');
+    console.log('target2.getAttribute("href")', target2.getAttribute("href"));
+    // target2.getAttribute("href") ./index.html
+    // attribute method
+    console.log('target2.href', target2.href);
+    // target2.href http://118.91.109.99/js_exercise/index.html
+    // property method
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<!-- If there's any gap between two tags, #text node comes and fills the gap. And it becomes the first child. -->
+<body id="start">
+  <ul>
+    <li><a href="./html.html">HTML</a></li>
+    <li><a href="./css.html">CSS</a></li>
+    <li><a href="./javascript.html">JavaScript</a>
+      <ul>
+        <li><a href="./JSCore.html">JavaScript Core</a></li>
+        <li><a href="./DOM.html">DOM</a></li>
+        <li><a href="./BOM.html">BOM</a></li>
+      </ul>
+    </li>
+  </ul>
+  <script>
+    var s = document.getElementById('start');
+    console.log(1, s.firstChild);                 // #text
+    var ul = s.firstChild.nextSibling;
+    console.log(2, ul);                           // <ul style="color: red;"> ... </ul>
+    ul.style.color = 'red';
+    console.log(3, ul.nextSibling);               // #text
+    console.log(4, ul.nextSibling.nextSibling);   // <script> ... /script>
+    console.log(5, ul.childNodes);                // NodeList(7) [text, li, text, li, text, li, text]
+    console.log(6, ul.childNodes[1]);             // <li><a href="./html.html">HTML</a></li>
+    console.log(7, ul.parentNode);                // <body id="start"> ... </body>
+    console.log(8, ul.parentNode.previousSibling.previousSibling); // comment section
+    console.log(9, ul.parentNode.previousElementSibling); // move only between Elements
+  </script>
+
+  <!-- Node includes text and comment values. -->
+</body>
+
+</html>

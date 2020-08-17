@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <img src="./images/lenna.png" alt="image">
+  <!-- putting an image using HTML tag. -->
+
+  <!-- BOM -->
+  <input type="button" onclick="alert(window.location)" value="alert(window.location)" />
+  <input type="button" onclick="window.open('bom.html')" value="window.open('bom.html')" />
+  <!-- /BOM -->
+
+  <!-- DOM -->
+  <script>
+    console.log(document.body);
+    //Same as when you type document.body on the console.
+    //Get the <body> objects
+    console.log(document.images);
+    //Same as when you type document.images on the console.
+    //Get the list of all of the image objects
+
+    console.log(document.getElementsByTagName('body'));
+    console.log(document.getElementsByTagName('body')[0]);
+    console.log(document.getElementsByTagName('body')[1]);
+    //Go to console and see what happens.
+
+  </script>
+  <!-- /DOM -->
+
+</body>
+
+</html>
+
+  <!--
+        ON THE CONSOLE IN CHROME DEVELOPMENT TOOL
+  var imgs = document.getElementsByTagName('img');
+  - undefined
+  imgs[0]
+  - <img src=​"./​images/​lenna.png" alt=​"image">​
+  imgs[0].style.width='300px';
+  - "300px"
+  imgs[0].style.width='50px';
+  - "50px"
+  imgs[0].style.width='200\px';
+  - "200px"
+  window
+  - Window {parent: Window, opener: null, top: Window, length: 0, frames: Window, …}
+  window.alert('hello world');
+  - undefined
+  -->
+
+  <!--
+  JavaScript Core
+    objects that are defined in JavaScript language.
+  BOM: Browser Object Model
+    properties of global object, window. controls various browser activities.
+  DOM: Document Object Model
+    properties of (window.)document. provides access to major elements in document.
+  -->

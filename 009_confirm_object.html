@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <input type="button" value="confirm" onclick="confirmfn();">
+
+  <script>
+    function confirmfn() {
+      if(confirm('Click Either')) {
+        //The condition of the if above should be either true or false and 'confirm funtion' returns either one of them.
+        alert("You clicked 'OK' and the return value is 'true'");
+      } else {
+        alert("You clicked 'Cancel' and the return value is 'false'");
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <script>
+    alert('Every object of BOM, DOM, and JS belongs to window global object');
+    window.alert('Hello World');
+    // Though you don't put [window.] in the former command, it works the same.
+
+    var a = 1;
+    alert(a);
+    alert(window.a);
+
+    var b = {id:1};
+    alert(b.id);
+    alert(window.b.id);
+    
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+
+<!--
+  ON THE CONSOLE
+
+  window // Global Object
+  - Window {parent: Window, opener: null, top: Window, length: 0, frames: Window, …}
+
+  window.document // DOM
+  - #document
+      <!DOCTYPE html>
+      <html lang=​"en" dir=​"ltr">
+        ​<head>
+        ​<meta charset=​"utf-8">​
+        <title>​</title>
+        ​</head>
+        ​<body>
+        ​<div id=​"stylebot">​…​</div>​
+        </body>​
+        <style id=​"stylebot-font">​@import url(https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap);</style>​
+      </html>​
+
+  - window.navigator // BOM
+  Navigator {vendorSub: "", productSub: "20030107", vendor: "Google Inc.", maxTouchPoints: 0, hardwareConcurrency: 8, …}appCodeName: "Mozilla"appName: "Netscape"appVersion: "5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36"connection: NetworkInformation {onchange: null, effectiveType: "4g", rtt: 50, downlink: 2.9, saveData: false}cookieEnabled: truedoNotTrack: nullgeolocation: Geolocation {}hardwareConcurrency: 8language: "ko-KR"languages: (4) ["ko-KR", "ko", "en-US", "en"]maxTouchPoints: 0mediaCapabilities: MediaCapabilities {}mediaSession: MediaSession {metadata: null, playbackState: "none"}mimeTypes: MimeTypeArray {0: MimeType, 1: MimeType, 2: MimeType, 3: MimeType, application/pdf: MimeType, application/x-google-chrome-pdf: MimeType, application/x-nacl: MimeType, application/x-pnacl: MimeType, length: 4}onLine: truepermissions: Permissions {}platform: "Win32"plugins: PluginArray {0: Plugin, 1: Plugin, 2: Plugin, Chrome PDF Plugin: Plugin, Chrome PDF Viewer: Plugin, Native Client: Plugin, length: 3}product: "Gecko"productSub: "20030107"userActivation: UserActivation {hasBeenActive: true, isActive: false}userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36"vendor: "Google Inc."vendorSub: ""webkitPersistentStorage: DeprecatedStorageQuota {}webkitTemporaryStorage: DeprecatedStorageQuota {}__proto__: Navigator
+
+  - window.Array // JavaScript Core
+  ƒ Array() { [native code] }
+
+
+  - a = 1;
+  1
+  - a
+  1
+  - window.a
+  1
+
+  - b = {id:1}
+  {id: 1}id: 1__proto__: Object
+  - b.id
+  1
+  - window.b
+  {id: 1}id: 1__proto__: Object
+  - window.b.id
+  1
+
+-->

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <ul>
+    <li class="marked">html</li>
+    <li>css</li>
+    <li id="active">JavaScript
+      <ul>
+        <li>JavaScript Core</li>
+        <li class="marked">DOM</li>
+        <li class="marked">BOM</li>
+      </ul>
+    </li>
+  </ul>
+  <script>
+    var list = document.getElementsByClassName('marked'); // search the whole area of the document for the class 'marked'
+    console.group('document');
+    for (var i = 0; i < list.length; i++) {
+      console.log(list[i].textContent);
+    }
+    console.groupEnd();
+
+    console.group('active');
+    var active = document.getElementById('active'); // search the whole area of the document for the ID 'active'
+    var list = active.getElementsByClassName('marked'); // search only the children of var 'active' for the class 'marked'
+    for (var i = 0; i < list.length; i++) {
+      console.log(list[i].textContent);
+    }
+    console.groupEnd();
+  </script>
+
+  <!-- CONSOLE
+    034_getElementsBy.html:23 document
+      034_getElementsBy.html:25 html
+      034_getElementsBy.html:25 DOM
+      034_getElementsBy.html:25 BOM
+    034_getElementsBy.html:29 active
+      034_getElementsBy.html:33 DOM
+      034_getElementsBy.html:33 BOM
+  -->
+</body>
+
+</html>

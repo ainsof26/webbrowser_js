@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <a id="target" href="http://google.com">anchor</a>
+
+  <script>
+    var target = document.getElementById('target');
+    console.log(target.getAttribute('href'));   // http://google.com
+    target.setAttribute('href', 'http://naver.com');
+    console.log(target.href);                   // http://naver.com
+    target.setAttribute('title', 'ainsof26');
+    console.log(target.hasAttribute('title'));  // true
+    console.log(target.getAttribute('title'));  // ainsof26
+    console.log(target.title);                  // ainsof26
+    target.removeAttribute('title');
+    console.log(target.hasAttribute('title'));  // false
+  </script>
+</body>
+
+</html>
